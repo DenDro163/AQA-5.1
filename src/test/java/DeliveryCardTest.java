@@ -22,7 +22,7 @@ public class DeliveryCardTest {
         open("http://localhost:9999");
     }
 
-    
+
 
     DataGenerator.UserInfo user = DataGenerator.Registration.generateValidUser();//Создаем юзера из дата класса
     String firstMeetingDay = DataGenerator.generateDate(3);//Встреча доступна через 3 дня
