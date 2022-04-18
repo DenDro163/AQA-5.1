@@ -92,6 +92,7 @@ public class DeliveryCardTest {
         $("[data-test-id=city] input").setValue(user.getCity());
         $("[data-test-id=date] input").doubleClick().sendKeys(firstMeetingDay);
         $("[data-test-id=name] input").setValue(user.getName());
+        $("[data-test-id=phone] input").setValue("");
         $("[data-test-id=agreement]").click();
         $(".button__text").click();
         $(".input_invalid .input__sub").shouldHave(exactText("Поле обязательно для заполнения"));
