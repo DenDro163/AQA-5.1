@@ -2,6 +2,7 @@ import com.github.javafaker.Faker;
 import data.DataGenerator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Keys;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -92,6 +93,7 @@ public class DeliveryCardTest {
         $("[data-test-id=city] input").setValue(user.getCity());
         $("[data-test-id=date] input").doubleClick().sendKeys(firstMeetingDay);
         $("[data-test-id=name] input").setValue(user.getName());
+        $("[data-test-id=phone] input").sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
         $("[data-test-id=phone] input").setValue("");
         $("[data-test-id=agreement]").click();
         $(".button__text").click();
