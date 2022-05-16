@@ -1,5 +1,9 @@
+import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.javafaker.Faker;
 import data.DataGenerator;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
@@ -21,6 +25,19 @@ public class DeliveryCardTest {
     void setUp() {//Открываем страницу.
         //   Configuration.headless = true;
         open("http://localhost:9999");
+    }
+
+    @BeforeAll
+    static void setUpAll() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
+
+    @AfterAll
+    static void tearDownAll() {
+        SelenideLogger.removeListener("allure");
+// ЗАПУСКАЕМ
+// gradlew clean test allureReport
+// gradlew allureServe
     }
 
 
